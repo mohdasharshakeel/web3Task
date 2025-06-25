@@ -61,11 +61,11 @@ When any user starts or stops the animation, all connected users see the change 
 
 ```mermaid
 flowchart LR
-    User1[User Browser] -- Socket.IO --> Backend
-    User2[User Browser] -- Socket.IO --> Backend
-    Backend -- Redis Pub/Sub --> Redis
-    Backend -- Socket.IO --> All Users
-```
+  User1[User Browser] -->|Socket.IO| Backend
+  User2[User Browser] -->|Socket.IO| Backend
+  Backend -->|Redis Pub/Sub| Redis
+  Backend -->|Socket.IO| AllUsers
+
 
 - **Frontend:** React app connects to backend via Socket.IO.
 - **Backend:** Express server with Socket.IO, using Redis for scaling.
