@@ -10,8 +10,19 @@ Start and stop a shared animated line—every user sees the same animation state
 
 ---
 
+<<<<<<< HEAD
 ## 📸 [Demo](#demo)
 ![Demo Animation](demo.gif) <!-- Replace with your actual GIF or video file path -->
+=======
+## 📸 Demo![CompleteTaskVideo](https://github.com/user-attachments/assets/9117f2d4-034c-4363-8086-a2619f37c35f)
+
+
+<!--
+Add your demo video or GIF here later.
+Example:
+![Demo Animation](demo.gif)
+-->
+>>>>>>> 201f4cb2ed98f300686d23fecf2e9af84951f64b
 
 ---
 
@@ -61,7 +72,27 @@ When any user starts or stops the animation, all connected users see the change 
 
 ## 🏗️ Architecture
 
+<<<<<<< HEAD
 ```
+=======
+         ┌────────────┐         ┌────────────┐
+         │  User 1    │         │  User 2    │
+         └────┬───────┘         └────┬───────┘
+              │                          │
+       Connect via Socket.IO      Connect via Socket.IO
+              │                          │
+              ▼                          ▼
+           ┌──────────────────────────────┐
+           │         Backend Server       │
+           │     (Node.js + Express)      │
+           └────────────┬─────────────────┘
+                        │
+                 Redis Pub/Sub (Adapter)
+                        │
+                    ┌───▼───┐
+                    │ Redis │
+                    └───────┘
+>>>>>>> 201f4cb2ed98f300686d23fecf2e9af84951f64b
 
 ```
  ┌────────────┐         ┌────────────┐
@@ -194,4 +225,8 @@ Made with ❤️ using **React**, **Node.js**, **Socket.IO**, and **Redis**.
 
 ---
 
+<<<<<<< HEAD
 ```
+=======
+**Made with ❤️ using React, Node.js, Socket.IO, and Redis.**
+>>>>>>> 201f4cb2ed98f300686d23fecf2e9af84951f64b
