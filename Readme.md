@@ -59,12 +59,23 @@ When any user starts or stops the animation, all connected users see the change 
 
 ## 🏗️ Architecture
 
-```mermaid
-flowchart LR
-  User1[User Browser] -->|Socket.IO| Backend
-  User2[User Browser] -->|Socket.IO| Backend
-  Backend -->|Redis Pub/Sub| Redis
-  Backend -->|Socket.IO| AllUsers
+         ┌────────────┐         ┌────────────┐
+         │  User 1    │         │  User 2    │
+         └────┬───────┘         └────┬───────┘
+              │                          │
+       Connect via Socket.IO      Connect via Socket.IO
+              │                          │
+              ▼                          ▼
+           ┌──────────────────────────────┐
+           │         Backend Server       │
+           │     (Node.js + Express)      │
+           └────────────┬─────────────────┘
+                        │
+                 Redis Pub/Sub (Adapter)
+                        │
+                    ┌───▼───┐
+                    │ Redis │
+                    └───────┘
 
 
 - **Frontend:** React app connects to backend via Socket.IO.
